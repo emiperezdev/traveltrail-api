@@ -1,7 +1,7 @@
 import express from 'express';
 import morgan from 'morgan';
 // import { AppRoutes } from '../presentation/AppRoutes';
-// import error from '../middleware/error';
+import error from '../middleware/error';
 
 const app = express();
 
@@ -10,6 +10,6 @@ app.use(morgan('dev'));
 
 // app.use(AppRoutes.routes);
 
-// app.use(error);
+app.use(error);
 
 export default app; 
