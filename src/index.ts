@@ -1,5 +1,5 @@
 import 'express-async-errors';
-// import { envs } from "./config/envs";
+import { envs } from "./config/envs";
 // import { MongoDatabase } from "./data/init";
 import app from "./start/app";
 // import { emailJob } from './jobs/email.job';
