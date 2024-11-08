@@ -9,4 +9,16 @@ export class TravelsController {
     res.send(travels);
   }
 
+  getTravelById = async (req: Request, res: Response) => {
+    const id = req.params.id;
+
+    const foundTravel = await TravelsModel.findById(id);
+    if (!foundTravel) {
+      res.status(404).send(`No travel found with the given id: ` + id);
+      return;
+    }
+
+    res.send(foundTravel);
+  } 
+
 }
