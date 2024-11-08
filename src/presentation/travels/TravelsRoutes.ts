@@ -9,6 +9,9 @@ export class TravelsRoutes {
 
     router.get('', travelsController.getTravels);
     router.get('/:id', validateId, travelsController.getTravelById);
+    router.post('', travelsController.saveTravel);
+    router.put('/:id', validateId, travelsController.updateTravelById);
+    router.delete('/:id', validateId, travelsController.updateTravelById);
 
     return router;
   }
