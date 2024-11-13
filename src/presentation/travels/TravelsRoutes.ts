@@ -1,6 +1,8 @@
 import { Router } from "express";
 import { TravelsController } from "./TravelsController";
 import validateId from "../../middleware/validateId";
+import validateBody from "../../middleware/validateBody";
+import { travelRequest } from "../../domain/schemas.joi";
 
 export class TravelsRoutes {
   static get routes(): Router {
@@ -9,8 +11,8 @@ export class TravelsRoutes {
 
     router.get('', travelsController.getTravels);
     router.get('/:id', validateId, travelsController.getTravelById);
-    router.post('', travelsController.saveTravel);
-    router.put('/:id', validateId, travelsController.updateTravelById);
+    router.post('', validateBody(travelRequest), travelsController.saveTravel);
+    router.put('/:id', validateId, validateBody(travelRequest), travelsController.updateTravelById);
     router.delete('/:id', validateId, travelsController.updateTravelById);
 
     return router;
