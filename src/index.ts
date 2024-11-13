@@ -4,6 +4,8 @@ import { MongoDatabase } from "./data/init";
 import app from "./start/app";
 import { emailJob } from './jobs/email.job';
 
+console.log('<<<<<<<<<< ENVS: ', envs);
+
 (async () =>
   await MongoDatabase.connect({
     mongoUrl: envs.MONGO_URL,
