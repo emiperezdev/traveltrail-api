@@ -13,7 +13,7 @@ export class TravelsRoutes {
     router.get('/:id', validateId, travelsController.getTravelById);
     router.post('', validateBody(travelRequest), travelsController.saveTravel);
     router.put('/:id', validateId, validateBody(travelRequest), travelsController.updateTravelById);
-    router.delete('/:id', validateId, travelsController.updateTravelById);
+    router.delete('/:id', validateId, travelsController.deleteTravelById);
 
     return router;
   }

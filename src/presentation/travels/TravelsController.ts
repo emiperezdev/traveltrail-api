@@ -4,12 +4,14 @@ import { TravelsModel } from "../../data/models/travels.model";
 export class TravelsController {
 
   getTravels = async (req: Request, res: Response) => {
+    console.log('>>> GET TRAVELS ENDPOINT <<<');
     const travels = await TravelsModel.find();
     
     res.send(travels);
   }
 
   getTravelById = async (req: Request, res: Response) => {
+    console.log('>>> GET TRAVEL BY ID ENDPOINT <<<');
     const id = req.params.id;
 
     const foundTravel = await TravelsModel.findById(id);
@@ -22,6 +24,7 @@ export class TravelsController {
   } 
 
   saveTravel = async (req: Request, res: Response) => {
+    console.log('>>> CREATE TRAVEL ENDPOINT <<<');
     console.log('body', req.body);
     const { username, lat, lng, locationName, description } = req.body;
     const newTravel = await TravelsModel.create({
@@ -36,6 +39,7 @@ export class TravelsController {
   }
 
   updateTravelById = async (req: Request, res: Response) => {
+    console.log('>>> UPDATE TRAVEL BY ID ENDPOINT <<<');
     const id = req.params.id;
     const { username, description, lat, lng, locationName } = req.body;
   
@@ -57,6 +61,7 @@ export class TravelsController {
   }  
 
   deleteTravelById = async (req: Request, res: Response) => {
+    console.log('>>> DELETE TRAVEL BY ID ENDPOINT <<<');
     const id = req.params.id;
     const currentTravel = await TravelsModel.findById(id);
     if (!currentTravel) {
