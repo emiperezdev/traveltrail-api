@@ -4,7 +4,7 @@ const travelsSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
     immutable: true,
-  }
+  },
   locationName: {
     type: String,
     required: true,
