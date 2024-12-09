@@ -21,7 +21,6 @@ export const emailJob = () => {
     await Promise.all(
       travels.map(async (t) => {
         const htmlBody = generateTravelEmailTemplate(
-          t.username,
           t.locationName,
           t.description,
           t.lat,

@@ -1,7 +1,6 @@
 import { envs } from "../config/envs";
 
 export function generateTravelEmailTemplate(
-  username: string,
   locationName: string,
   description: string,
   lat: number,
@@ -68,7 +67,6 @@ export function generateTravelEmailTemplate(
               <h1>Detalles del travel</h1>
           </div>
           <div class="content">
-              <p><strong>Username:</strong> ${username}</p>
               <p><strong>Nombre del lugar:</strong> ${locationName}</p>
               <p><strong>Descripcion:</strong> ${description}</p>
               <p><strong>Latitud:</strong> ${lat}</p>
