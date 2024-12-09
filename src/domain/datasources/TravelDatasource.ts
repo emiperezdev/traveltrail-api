@@ -8,6 +8,7 @@ export class TravelDataSource {
       username: travelPartial.username,
       locationName: travelPartial.locationName,
       description: travelPartial.description,
+      type: travelPartial.type,
       lng: travelPartial.lng,
       lat: travelPartial.lat,
       isEmailSent: travelPartial.isEmailSent

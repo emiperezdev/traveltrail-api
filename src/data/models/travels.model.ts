@@ -17,6 +17,11 @@ const travelsSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  type: {
+    type: String,
+    required: true,
+    enum: ["Viajes", "Por Viajar"], 
+  },
   lat: {
     type: Number,
     required: true,

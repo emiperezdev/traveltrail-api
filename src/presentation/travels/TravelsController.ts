@@ -26,10 +26,11 @@ export class TravelsController {
   saveTravel = async (req: Request, res: Response) => {
     console.log('>>> CREATE TRAVEL ENDPOINT <<<');
     console.log('body', req.body);
-    const { username, lat, lng, locationName, description } = req.body;
+    const { username, lat, lng, locationName, description, type } = req.body;
     const newTravel = await TravelsModel.create({
       username,
       description,
+      type,
       lat,
       lng,
       locationName
@@ -41,7 +42,7 @@ export class TravelsController {
   updateTravelById = async (req: Request, res: Response) => {
     console.log('>>> UPDATE TRAVEL BY ID ENDPOINT <<<');
     const id = req.params.id;
-    const { username, description, lat, lng, locationName } = req.body;
+    const { username, description, lat, lng, locationName, type } = req.body;
   
     let currentTravel = await TravelsModel.findById(id);
     if (!currentTravel) {
@@ -52,6 +53,7 @@ export class TravelsController {
     currentTravel = await TravelsModel.findByIdAndUpdate(id, {
       username,
       description,
+      type,
       lat,
       lng,
       locationName
