@@ -9,11 +9,11 @@ export class TravelsRoutes {
     const router = Router();
     const travelsController = new TravelsController();
 
-    router.get('/get', travelsController.getTravels);
-    router.get('/get/:id', validateId, travelsController.getTravelById);
-    router.post('/post', validateBody(travelRequest), travelsController.saveTravel);
-    router.put('/put/:id', validateId, validateBody(travelRequest), travelsController.updateTravelById);
-    router.delete('/delete/:id', validateId, travelsController.deleteTravelById);
+    router.get('', travelsController.getTravels);
+    router.get('/:id', validateId, travelsController.getTravelById);
+    router.post('', validateBody(travelRequest), travelsController.saveTravel);
+    router.put('/:id', validateId, validateBody(travelRequest), travelsController.updateTravelById);
+    router.delete('/:id', validateId, travelsController.deleteTravelById);
 
     return router;
   }
